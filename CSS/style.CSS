@@ -1,0 +1,191 @@
+:root{
+    --peach:#cec2b9;
+    --blue: #100924;
+    --gren:#19dd43;
+    --red:#7acef0;
+    --orange:#b1edf1;
+    --dark:#000;
+}
+*{
+    box-sizing: border-box;
+}
+html.body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#nav-container{
+    background-color: var(--orange);
+    position: sticky;
+    top: 0px;
+}
+.nav-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+   ;
+}
+.nav-flex label ,#humberger{
+    display: none;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li a{
+    display: block;
+    color: var(--dark);
+    padding: 0 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+nav ul li a:hover{
+    background-color: var(--peach);
+    transition: all 03s;
+}
+.nav-brand h2{
+    margin: 14px 0 0 10px;
+    color:var(--blue);
+}
+#hiro-container{
+    background-image: url(../image/hero_image.png);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+}
+.texs{
+    text-align: center;
+    color: var(--peach);
+    font-size: 20px;
+}
+.button{
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px ;
+    color:var(--blue);
+    padding: 10px;
+    background-color: var(--gren);
+    font-size: 16px;
+    border-radius: 10px;
+}
+.button:hover{
+    background-color: var(--orange);
+}
+main{
+    width: 80%;
+    margin: auto;
+}
+/* about */
+#about h1{
+    color: var(--dark);
+    text-align: center;
+    margin-top: 80px;
+}
+#about .about-deskripsi {
+    text-align: center;
+    color: var(--dark);
+}
+.about-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.about-image,.about-text{
+    width: 50%;
+    margin: 14px;
+}
+.about-image img{
+    width: 100%;
+    object-fit: cover;
+
+}
+#service h1{
+    color: var(--dark);
+    text-align: center;
+    margin-top: 80px;
+}
+#service .service-deskripsi{
+    text-align: center;
+    color: var(--dark);
+}
+.service-flex{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+.service-items{
+    width: 25%;
+    text-align: center;
+    padding: 20px 30px;
+}
+.service-items .fas{
+    color: var(--gren);
+}
+/* versi tablet */
+@media screen and (max-width:768px){
+    /* versi humberger */
+    #nav-container  .nav-flex label{
+        display: inline-block;
+        color:var(--dark);
+        font-style:normal;
+    }
+    /* ini susun ulan mmenu enjadi vertikal */
+    #nav-container .nav-flex{
+        width: 100%;
+    }
+    nav ul{
+        flex-direction:column ;
+        width:100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    nav ul li a{
+        display: block;
+        color: var(--dark);
+        background-color:var(--cyan);
+        padding: 0 30px;
+        height: auto;
+    }
+    /* pindahan posis brand kekanan dan diperkecil */
+     .nav-brand h2{
+        position: absolute;
+        right: 20px
+     }
+     /* ini untuk menapilkan atau menyembunyikan menu */
+     #nav-container nav{  
+         display: none;
+     }
+     /* ini mennapilkan menu ketika texs garis 3 diklik */
+     #nav-container .nav-flex input:checked ~ nav{
+             display: flex;
+     }
+     .about-flex{
+    flex-direction: column;
+}
+.about-image,.about-text{
+    width: auto;
+}
+/* services our fitur */
+.service-items {
+    width: 50%;
+}
+}
+/* smartphone */
+@media screen and (max-width:481px){
+    .service-items{
+        width: 100%;
+    }
+}
